@@ -49,7 +49,7 @@ def first_clear(d):
 	
 def second_clear(d,p,price_d):
 	for x in d:
-		if(price_d[x] >= 0):
+		if(d[x] >= 0):
 			p += d[x] * price_d[x]
 
 	return p
@@ -109,6 +109,7 @@ def checkout(skus):
     return p
 
 print(checkout("BBBB"))
+
 
 
 
