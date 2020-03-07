@@ -17,11 +17,39 @@ def first_clear(d):
 	if(d['F'] > 2):
 		d['F'] -= d['F'] // 3
 
+
+	p += d['H'] // 10 * 80
+	d['H'] -= d['H'] // 10 * 10
+	p += d['H'] // 5 * 45 
+	d['H'] -= d['H'] // 5 * 5
+
+	p += d['K'] // 2 * 150
+	d['K'] -= d['K'] // 2 * 2
+
+	d['M'] -= d['N'] // 3
+
+	p += d['P'] // 5 * 200
+	d['P'] -= d['P'] //5 * 5
+
+	d['Q'] -= d['R'] // 3
+
+	p += d['Q'] // 3 * 80
+	d['Q'] -= d['Q'] // 3 * 3
+
+	d['U'] -= d['U'] // 4
+
+	p += d['V'] // 3 * 130
+	d['V'] -= d['V'] // 3 * 3
+	p += d['V'] // 2 * 90
+	d['V'] -= d['V'] // 2 * 2
+
+
 	return [d,p]
 	
 def second_clear(d,p,price_d):
 	for x in d:
-		p += d[x] * price_d[x]
+		if(price_d[x] >= 0):
+			p += d[x] * price_d[x]
 
 	return p
 
@@ -79,6 +107,7 @@ def checkout(skus):
     p = second_clear(d,p,g)
     return p
 
-print(checkout("FFFF"))
+print(checkout("VVV"))
+
 
 
