@@ -28,9 +28,9 @@ def checkout(skus):
     		else:
     			return -1
 
-    refined_list[1] -= refined_list[4]//2
+    refined_list[1] -= refined_list[4]//2 
     if(refined_list[1] < 0):
-    	refined_list[1] == 0
+    	refined_list[1] = 0
 
 
     price = 0
@@ -44,5 +44,6 @@ def checkout(skus):
 
     return price
 
-print(checkout("EB"))
+print(checkout("EE"))
+
 
