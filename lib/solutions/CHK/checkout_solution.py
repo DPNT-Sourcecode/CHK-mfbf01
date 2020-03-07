@@ -49,8 +49,11 @@ def first_clear(d):
 	group = (d['S'] + d['T'] + d['X'] + d['Y'] + d['Z'])//3
 	p += group * 45
 	group *= 3
+	print(group)
 	if(d['Z'] != 0):
 		d['Z'] -= group
+		if(d['Z'] < 0):
+			d['Z'] = 0
 		group -= d['Z']
 	if(d['S'] != 0):
 		d['S'] -= group
@@ -60,9 +63,13 @@ def first_clear(d):
 		group -= d['T']
 	if(d['Y'] != 0):
 		d['Y'] -= group
+		if(d['Y'] < 0):
+			d['Y'] = 0
 		group -= d['Y']
 	if(d['X'] != 0):
 		d['X'] -= group
+		if(d['X'] < 0):
+			d['X'] = 0
 		group -= d['X']  
 
 	return [d,p]
@@ -130,5 +137,6 @@ def checkout(skus):
     return p
 
 print(checkout("XYXXZ"))
+
 
 
