@@ -25,7 +25,7 @@ def first_clear(d):
 	p += d['H'] // 5 * 45 
 	d['H'] -= d['H'] // 5 * 5
 
-	p += d['K'] // 2 * 150
+	p += d['K'] // 2 * 120
 	d['K'] -= d['K'] // 2 * 2
 
 	d['M'] -= d['N'] // 3
@@ -45,6 +45,19 @@ def first_clear(d):
 	p += d['V'] // 2 * 90
 	d['V'] -= d['V'] // 2 * 2
 
+
+	group = (d['S'] + d['T'] + d['X'] + d['Y'] + d['Z'])//3
+	p += group * 45
+	group *= 3
+
+	d['Z'] -= group
+	group -= d['Z']
+	d['S'] -= group
+	group -= d['S']
+	d['T'] -= group
+	group -= d['T']
+	d['X'] -= group
+	group -= d['X']  
 
 	return [d,p]
 	
@@ -67,7 +80,7 @@ def price_dict():
 	p['H'] = 10
 	p['I'] = 35
 	p['J'] = 60
-	p['K'] = 80
+	p['K'] = 70
 	p['L'] = 90
 	p['M'] = 15
 	p['N'] = 40
@@ -75,14 +88,14 @@ def price_dict():
 	p['P'] = 50
 	p['Q'] = 30
 	p['R'] = 50
-	p['S'] = 30
+	p['S'] = 20
 	p['T'] = 20
 	p['U'] = 40
 	p['V'] = 50
 	p['W'] = 20
-	p['X'] = 90
-	p['Y'] = 10
-	p['Z'] = 50
+	p['X'] = 17
+	p['Y'] = 20
+	p['Z'] = 21
 
 	return p
 
@@ -110,4 +123,5 @@ def checkout(skus):
     p = second_clear(d,p,g)
     return p
 
-print(checkout("RRR"))
+print(checkout("ZZZ"))
+
