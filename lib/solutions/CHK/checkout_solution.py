@@ -4,7 +4,7 @@
 # skus = unicode string
 def checkout(skus):
     item_list = skus.split(" ")
-    refined_list = []
+    refined_list = [0,0,0,0]
     #print(item_list)
 
     #parse skus
@@ -14,12 +14,15 @@ def checkout(skus):
     	#print(item)
     	for s in item:
     		
-    		if s.isdigit():
-    			if(num == -1):
-    				num = 0
-    			num = num*10 + int(s)
-    		elif ((s == 'A' or s == 'B' or s == 'C' or s == 'D') and it == None and num != -1):
-    			it = s 
+    		
+    		if(s=='A'):
+    			refined_list[0] += 1
+    		elif(s=='B'):
+    			refined_list[1] += 1
+    		elif(s=='C'):
+    			refined_list[2] += 1
+    		elif(s=='D'):
+    			refined_list[3] += 1
     		else:
     			#print(s)
     			return -1
@@ -41,6 +44,7 @@ def checkout(skus):
     return price
 
 print(checkout("4A 3B"))
+
 
 
 
