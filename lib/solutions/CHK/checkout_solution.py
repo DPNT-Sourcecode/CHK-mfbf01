@@ -143,7 +143,8 @@ def checkout(skus):
     p = second_clear(d,p,g)
     return p
 
-print(checkout("Z"))
+print(checkout("ZXXA"))
+
 
 
 
