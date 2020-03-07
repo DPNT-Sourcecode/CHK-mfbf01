@@ -149,11 +149,3 @@ def checkout(skus):
     return p
 
 print(checkout("CXYZYZC"))
-
-
-
-
-
-
-
-
