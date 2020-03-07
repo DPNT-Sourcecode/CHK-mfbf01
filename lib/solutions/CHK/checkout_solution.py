@@ -24,29 +24,16 @@ def checkout(skus):
     		elif(s=='D'):
     			refined_list[3] += 1
     		else:
-    			#print(s)
     			return -1
-    	if(num < 0):
-    		return -1
-    	refined_list.append([num,it])
+
 
     price = 0
-    for x in refined_list:
-    	if(x[1] == 'A'):
-    		price += x[0]//3 * 130 + x[0]%3 * 50
-    	elif(x[1] == 'B'):
-    		price += x[0]//2 * 45 + x[0]%2 * 30
-    	elif(x[1] == 'C'):
-    		price += 20
-    	elif(x[1] == 'D'):
-    		price += 15
+    	
+    price += refined_list[0]//3 * 130 + refined_list[0]%3 * 50
+    price += refined_list[1]//2 * 45 + refined_list[1]%2 * 30
+    price += refined_list[2] * 20
+    price += refined_list[3] * 15
 
     return price
 
-print(checkout("4A 3B"))
-
-
-
-
-
-
+print(checkout(""))
