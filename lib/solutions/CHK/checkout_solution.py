@@ -43,25 +43,21 @@ def first_clear(d):
 	p += d['V'] // 2 * 90
 	d['V'] -= d['V'] // 2 * 2
 	print(d)
-	print("gg")
-	print(d['Z'])
+
 	group = 0
-	print(group)
+
 	group += (d['S'] + d['T'] + d['X'] + d['Y'] + d['Z'])
-	print(group)
+
 	group = group//3
-	print(group)
 	p += group * 45
 	print(p)
 	group *= 3
+	print(group)
 	if(d['Z'] != 0):
-		print("test2")
 		tmp = d['Z']
-		print("test3")
 		d['Z'] -= group
 		if(d['Z'] < 0):
 			d['Z'] = 0
-		print("test4")
 		group -= tmp
 	if(d['S'] != 0):
 		tmp = d['S']
@@ -148,9 +144,11 @@ def checkout(skus):
     			return -1
     #print(item_dict)
     d,p = first_clear(item_dict)
+    print(d)
     p = second_clear(d,p,g)
     return p
 
+print(checkout("CXYZYZC"))
 
 
 
