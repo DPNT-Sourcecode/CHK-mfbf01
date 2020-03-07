@@ -48,7 +48,4 @@ def checkout(skus):
 
     return price
 
-print(checkout("FFFFF"))
-
-
-
+print(checkout("AAFFF"))
