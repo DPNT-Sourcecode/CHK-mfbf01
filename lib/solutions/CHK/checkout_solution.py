@@ -3,6 +3,22 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 
+def first_clear(d):
+	p = 0
+	p += d['A']//5 * 200 
+	d['A'] -= d['A']//5 * 5
+	p += d['A']//3 * 130 + d['A'] % 3
+	d['A'] = 0
+
+	
+	d['B'] -= d['E']//2
+	p += d['B'] // 2 * 45 + d['B'] % 2 * 30
+	
+	if(d['F'] > 2):
+		d['F'] -= d['F'] // 3
+
+	
+
 def price_dict():
 	p = {}
 	p['A'] = 50
@@ -32,11 +48,12 @@ def price_dict():
 	p['Y'] = 10
 	p['Z'] = 50
 
+	return p
 
 def checkout(skus):
     item_list = skus.split(" ")
     item_dict = {}
-    price_dict = price_dict()
+    g = price_dict()
     
     for item in item_list:
     	num = -1
@@ -49,25 +66,11 @@ def checkout(skus):
     				item_dict[s] += 1
     		else:
     			return -1
-    if(refined_list[5] >2):
-    	refined_list[5] -= refined_list[5]//3 
-    refined_list[1] -= refined_list[4]//2 
-    if(refined_list[1] < 0):
-    	refined_list[1] = 0
-
-
-    price = 0
-    price += refined_list[0]//5 * 200
-    refined_list[0] -= refined_list[0] // 5 * 5
-    price += refined_list[0]//3 * 130 + refined_list[0]%3 * 50
-    price += refined_list[1]//2 * 45 + refined_list[1]%2 * 30
-    price += refined_list[2] * 20
-    price += refined_list[3] * 15
-    price += refined_list[4] * 40
-    price += refined_list[5] * 10
+    print(item_dict)
 
     return price
 
 print(checkout("FFFFF"))
+
 
 
