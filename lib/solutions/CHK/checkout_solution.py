@@ -44,6 +44,7 @@ def first_clear(d):
 	d['V'] -= d['V'] // 2 * 2
 
 	print("gg")
+	print(d['S'])
 	group = (d['S'] + d['T'] + d['X'] + d['Y'] + d['Z'])//3
 	print(group)
 	p += group * 45
@@ -145,5 +146,6 @@ def checkout(skus):
     d,p = first_clear(item_dict)
     p = second_clear(d,p,g)
     return p
+
 
 
