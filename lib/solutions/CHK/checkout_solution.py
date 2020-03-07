@@ -12,8 +12,9 @@ def first_clear(d):
 
 	
 	d['B'] -= d['E']//2
-	p += d['B'] // 2 * 45 
-	d['B'] -= d['B'] //2 * 2
+	if(d['B'] >= 0):
+		p += d['B'] // 2 * 45 
+		d['B'] -= d['B'] //2 * 2
 	
 	if(d['F'] > 2):
 		d['F'] -= d['F'] // 3
@@ -33,9 +34,9 @@ def first_clear(d):
 	d['P'] -= d['P'] //5 * 5
 
 	d['Q'] -= d['R'] // 3
-
-	p += d['Q'] // 3 * 80
-	d['Q'] -= d['Q'] // 3 * 3
+	if(d['Q'] > 0):
+		p += d['Q'] // 3 * 80
+		d['Q'] -= d['Q'] // 3 * 3
 
 	d['U'] -= d['U'] // 4
 
@@ -109,7 +110,8 @@ def checkout(skus):
     p = second_clear(d,p,g)
     return p
 
-print(checkout("EE"))
+print(checkout("RRR"))
+
 
 
 
