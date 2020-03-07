@@ -43,11 +43,10 @@ def first_clear(d):
 	p += d['V'] // 2 * 90
 	d['V'] -= d['V'] // 2 * 2
 
-
+	print("test")
 	group = (d['S'] + d['T'] + d['X'] + d['Y'] + d['Z'])//3
 	p += group * 45
 	group *= 3
-	print(group)
 	if(d['Z'] != 0):
 		tmp = d['Z']
 		d['Z'] -= group
@@ -82,7 +81,6 @@ def first_clear(d):
 	return [d,p]
 	
 def second_clear(d,p,price_d):
-	print("test")
 	for x in list(d.keys()):
 		if(d[x] >= 0):
 			p += d[x] * price_d[x]
@@ -140,11 +138,10 @@ def checkout(skus):
     			return -1
     #print(item_dict)
     d,p = first_clear(item_dict)
-    print(d)
     p = second_clear(d,p,g)
     return p
 
-print(checkout("ZXXA"))
+
 
 
 
