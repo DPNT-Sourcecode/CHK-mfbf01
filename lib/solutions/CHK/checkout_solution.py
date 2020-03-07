@@ -42,7 +42,7 @@ def first_clear(d):
 	d['V'] -= d['V'] // 3 * 3
 	p += d['V'] // 2 * 90
 	d['V'] -= d['V'] // 2 * 2
-
+	print(d)
 	print("gg")
 	print(d['Z'])
 	group = 0
@@ -150,6 +150,7 @@ def checkout(skus):
     d,p = first_clear(item_dict)
     p = second_clear(d,p,g)
     return p
+
 
 
 
