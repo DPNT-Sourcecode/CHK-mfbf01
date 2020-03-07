@@ -103,12 +103,14 @@ def checkout(skus):
     				item_dict[s] += 1
     		else:
     			return -1
-    print(item_dict)
+    #print(item_dict)
     d,p = first_clear(item_dict)
+    print(d)
     p = second_clear(d,p,g)
     return p
 
-print(checkout("BBBB"))
+print(checkout("EE"))
+
 
 
 
