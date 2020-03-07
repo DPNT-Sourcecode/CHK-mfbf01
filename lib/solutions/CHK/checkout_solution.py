@@ -17,6 +17,7 @@ def first_clear(d):
 	if(d['F'] > 2):
 		d['F'] -= d['F'] // 3
 
+	return [d,p]
 	
 
 def price_dict():
@@ -54,7 +55,7 @@ def checkout(skus):
     item_list = skus.split(" ")
     item_dict = {}
     g = price_dict()
-    
+    p = 0
     for item in item_list:
     	num = -1
     	it = None
@@ -67,10 +68,7 @@ def checkout(skus):
     		else:
     			return -1
     print(item_dict)
-
-    return price
+    d,p = first_clear(item_dict)
+    return p
 
 print(checkout("FFFFF"))
-
-
-
