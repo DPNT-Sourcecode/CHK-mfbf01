@@ -8,10 +8,12 @@ def first_clear(d):
 	p += d['A']//5 * 200 
 	d['A'] -= d['A']//5 * 5
 	p += d['A']//3 * 130 
+	d['A'] -= d['A'] // 3 * 3
 
 	
 	d['B'] -= d['E']//2
 	p += d['B'] // 2 * 45 
+	d['B'] -= d['B'] //2 * 2
 	
 	if(d['F'] > 2):
 		d['F'] -= d['F'] // 3
@@ -106,7 +108,8 @@ def checkout(skus):
     p = second_clear(d,p,g)
     return p
 
-print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+print(checkout("BBBB"))
+
 
 
 
