@@ -1,5 +1,3 @@
-
-
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -146,6 +144,7 @@ def checkout(skus):
     return p
 
 print(checkout("TTSZ"))
+
 
 
 
