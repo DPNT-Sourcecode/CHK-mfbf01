@@ -4,7 +4,7 @@
 # skus = unicode string
 def checkout(skus):
     item_list = skus.split(" ")
-    refined_list = [0,0,0,0,0]
+    refined_list = [0,0,0,0,0,0]
     #print(item_list)
 
     #parse skus
@@ -25,9 +25,12 @@ def checkout(skus):
     			refined_list[3] += 1
     		elif(s=='E'):
     			refined_list[4] += 1
+    		elif(s=='F'):
+    			refined_list[5] += 1
     		else:
     			return -1
-
+    if(refined_list[5] >2):
+    	refined_list[5] = refined_list[5]//2 + refined_list[5] % 2
     refined_list[1] -= refined_list[4]//2 
     if(refined_list[1] < 0):
     	refined_list[1] = 0
@@ -41,9 +44,11 @@ def checkout(skus):
     price += refined_list[2] * 20
     price += refined_list[3] * 15
     price += refined_list[4] * 40
+    price += refined_list[5] * 10
 
     return price
 
-print(checkout("EE"))
+print(checkout("FFFFF"))
+
 
 
