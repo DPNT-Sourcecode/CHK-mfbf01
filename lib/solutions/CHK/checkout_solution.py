@@ -131,7 +131,7 @@ def price_dict():
 def checkout(skus):
     item_list = skus.split(" ")
     item_dict = {}
-    for i in range(ord('A'), ord('Z')):
+    for i in range(ord('A'), ord('Z') + 1):
     	item_dict[chr(i)] = 0
     g = price_dict()
     p = 0
@@ -150,6 +150,7 @@ def checkout(skus):
     d,p = first_clear(item_dict)
     p = second_clear(d,p,g)
     return p
+
 
 
 
