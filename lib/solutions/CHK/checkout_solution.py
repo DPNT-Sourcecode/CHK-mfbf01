@@ -48,10 +48,13 @@ def first_clear(d):
 	p += group * 45
 	group *= 3
 	if(d['Z'] != 0):
+		print("test2")
 		tmp = d['Z']
+		print("test3")
 		d['Z'] -= group
 		if(d['Z'] < 0):
 			d['Z'] = 0
+		print("test4")
 		group -= tmp
 	if(d['S'] != 0):
 		tmp = d['S']
@@ -140,6 +143,7 @@ def checkout(skus):
     d,p = first_clear(item_dict)
     p = second_clear(d,p,g)
     return p
+
 
 
 
