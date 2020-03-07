@@ -76,8 +76,9 @@ def checkout(skus):
     			return -1
     print(item_dict)
     d,p = first_clear(item_dict)
-    p = second_clear(d,p,price_dict)
+    p = second_clear(d,p,g)
     return p
 
 print(checkout("FFFF"))
+
 
