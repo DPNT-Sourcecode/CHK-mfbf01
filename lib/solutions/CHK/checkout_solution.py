@@ -19,6 +19,11 @@ def first_clear(d):
 
 	return [d,p]
 	
+def second_clear(d,p,price_d):
+	for x in d:
+		p += d[x] * price_d[x]
+
+	return p
 
 def price_dict():
 	p = {}
@@ -54,6 +59,8 @@ def price_dict():
 def checkout(skus):
     item_list = skus.split(" ")
     item_dict = {}
+    for i in range(ord('A'), ord('Z')):
+    	item_dict[chr(i)] = 0
     g = price_dict()
     p = 0
     for item in item_list:
@@ -69,6 +76,8 @@ def checkout(skus):
     			return -1
     print(item_dict)
     d,p = first_clear(item_dict)
+    p = second_clear(d,p,price_dict)
     return p
 
-print(checkout("FFFFF"))
+print(checkout("FFFF"))
+
